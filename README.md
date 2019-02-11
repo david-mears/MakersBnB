@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/david-mears/MakersBnB.svg?branch=staging)](https://travis-ci.org/david-mears/MakersBnB)
+
 # MakersBnB
 
 Week 6 project: our first solo team project.
