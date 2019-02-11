@@ -1,3 +1,6 @@
+HERE IS A SMILEY :)
+
+
 # MakersBnB
 
 Week 6 project: our first solo team project.
