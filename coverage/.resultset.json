@@ -1,7 +1,26 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/spec/features/feature_spec.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/app/models/password.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ]
     },
-    "timestamp": 1549966787
+    "timestamp": 1549969880
   }
 }
