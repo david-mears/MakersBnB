@@ -1,5 +1,5 @@
 body {
-  background-color: #B6B6B6;
+  background-color: #D8D8D8;
   font-family: Futura-Bold;
   color: #636363;
 }
@@ -54,7 +54,7 @@ div#central-box {
 }
 
 div.fields {
-  background-image: radial-gradient(50% 50%, #FFFFFF 50%, #DDAC14 100%);
+  background-image: radial-gradient(50% 50%, #FFFFFF 50%, #f3e3b0 100%);
   box-shadow: 0 2px 4px 0px rgba(0,0,0,0.50);
   border-radius: 8px;
   font-size: 25px;
