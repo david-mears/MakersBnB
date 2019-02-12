@@ -7,6 +7,22 @@
   </head>
   <body>
 
+  <%= form_with scope: :user, local: true, url: 'welcome/index' do |form| %>
+  <p>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %>
+  </p>
+
+  <p>
+    <%= form.label :password %><br>
+    <%= form.text_area :password %>
+  </p>
+
+  <p>
+    <%= form.submit "Sign in" %>
+  </p>
+  <% end %>
+
   <div class="main-page-container">
 
   <div></div>
@@ -20,13 +36,16 @@
     </div>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
+
+    <form >
+
     <div class="grid-item" id="item-5">
-      <div class="fields" id="username">username</div>
+      <div class="fields" id="username"><p>Username</p></div>
     </div>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
     <div class="grid-item" id="item-8">
-      <div class="fields" id="password">password</div>
+      <div class="fields" id="password"><p>Password</p></div>
     </div>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
@@ -34,6 +53,9 @@
       <div class="fields" id="sign-in">
         <p>sign in</p>
       </div>
+
+    </form>
+
     </div>
     <div class="grid-item"></div>
   </div>
