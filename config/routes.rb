@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'welcome/index' do
-    redirect 'welcome/index' unless Password.check_password(params[:username], params[:password])
-    session[:username] = params[:username]
-    redirect 'sessions/index'
-  end
+  get 'welcome/index'
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
 
   resources :spaces, :users
 
