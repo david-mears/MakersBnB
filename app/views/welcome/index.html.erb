@@ -20,7 +20,7 @@
     </div>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
-    <%= form_with scope: :user, local: true, url: 'welcome/index', id: 'form' do |form| %>
+    <%= form_with scope: :user, local: true, url: 'sessions/create', id: 'form' do |form| %>
     <div class="grid-item" id="item-5">
         <p>
           <%= form.text_field :attr, placeholder: "Username", id: "username", class: "fields", autofocus: "true" %>
