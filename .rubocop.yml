@@ -38,7 +38,7 @@
 AllCops:
   Exclude: 
     - 'db/**'
-    - 'config/**'
+    - 'config/**/*'
     - 'bin/**'
 
 Metrics/LineLength:
@@ -51,7 +51,6 @@ Metrics/LineLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-    - 'config/**'
     - Gemfile
     - Rakefile
 
