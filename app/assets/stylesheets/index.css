@@ -24,6 +24,10 @@ body {
    align-items: stretch;
 }
 
+#form {
+  text-align: center;
+}
+
 #item-5 {
   padding-left: 25%;
   padding-right: 25%;
@@ -53,25 +57,10 @@ div#central-box {
   text-shadow: 0 2px 4px rgba(0,0,0,0.50);
 }
 
-div.fields {
+.fields {
   background-image: radial-gradient(50% 50%, #FFFFFF 50%, #f3e3b0 100%);
   box-shadow: 0 2px 4px 0px rgba(0,0,0,0.50);
   border-radius: 8px;
   font-size: 25px;
   text-align: center;
 }
-
-
-color: #636363;
-background-image: radial-gradient(50% 50%, #FFFFFF 50%, #DDAC14 100%);
-
-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.50);
-border-radius: 8px;
-background-image: radial-gradient(50% 50%, #FFFFFF 50%, #DDAC14 100%);
-
-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.50);
-border-radius: 8px;
-font-family: Futura-Bold;
-font-size: 25px;
-color: #636363;
-text-align: left;
