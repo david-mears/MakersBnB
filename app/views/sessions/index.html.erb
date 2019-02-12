@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/index.css">
+  </head>
+  <body>
+
+  <%= form_with scope: :user, local: true, url: 'welcome/index' do |form| %>
+  <p>
+    <%= form.text_field :attr, placeholder: "Username" %>
+  </p>
+
+  <p>
+    <%= form.text_area :attr, placeholder: "Password" %>
+  </p>
+
+  <p>
+    <%= form.submit "Sign in" %>
+  </p>
+  <% end %>
+
+  <div class="main-page-container">
+
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div id="central-box" class="grid-container">
+    <div class="grid-item"></div>
+    <div class="grid-item">
+      <p id="makersbnb">MakersBnB<p>
+    </div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+
+    <form >
+
+    <div class="grid-item" id="item-5">
+      <div class="fields" id="username"><p>Username</p></div>
+    </div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item" id="item-8">
+      <div class="fields" id="password"><p>Password</p></div>
+    </div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item" id="item-11">
+      <div class="fields" id="sign-in">
+        <p>sign in</p>
+      </div>
+
+    </form>
+
+    </div>
+    <div class="grid-item"></div>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  </div>
+
+  </body>
+</html>

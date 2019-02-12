@@ -2,6 +2,7 @@ class SpacesController < ApplicationController
   def new
   end
 
-  def index
+  def show
+    render 'index'
   end
 end
