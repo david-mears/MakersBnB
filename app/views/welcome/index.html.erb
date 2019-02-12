@@ -7,20 +7,6 @@
   </head>
   <body>
 
-  <%= form_with scope: :user, local: true, url: 'welcome/index' do |form| %>
-  <p>
-    <%= form.text_field :attr, placeholder: "Username" %>
-  </p>
-
-  <p>
-    <%= form.text_area :attr, placeholder: "Password" %>
-  </p>
-
-  <p>
-    <%= form.submit "Sign in" %>
-  </p>
-  <% end %>
-
   <div class="main-page-container">
 
   <div></div>
@@ -34,25 +20,26 @@
     </div>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
-
-    <form >
-
+    <%= form_with scope: :user, local: true, url: 'sessions/create', id: 'form' do |form| %>
     <div class="grid-item" id="item-5">
-      <div class="fields" id="username"><p>Username</p></div>
+        <p>
+          <%= form.text_field :attr, placeholder: "Username", id: "username", class: "fields", autofocus: "true" %>
+        </p>
     </div>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
     <div class="grid-item" id="item-8">
-      <div class="fields" id="password"><p>Password</p></div>
+        <p>
+          <%= form.text_field :attr, placeholder: "Password", id: "password", class: "fields" %>
+        </p>
     </div>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
     <div class="grid-item" id="item-11">
-      <div class="fields" id="sign-in">
-        <p>sign in</p>
-      </div>
-
-    </form>
+        <p>
+          <%= form.submit :attr, class: "fields", value: "Sign in" %>
+        </p>
+    <% end %>
 
     </div>
     <div class="grid-item"></div>
