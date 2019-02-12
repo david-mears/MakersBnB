@@ -1,3 +1,90 @@
-// Place all the styles related to the Spaces controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  font-family: Futura;
+}
+
+
+body {
+  background-color: #D8D8D8;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 2fr 2fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.top1,
+.top2,
+.top3,
+.top4 {
+	justify-content:  center;
+  text-align: center;
+}
+
+
+.cardbg {
+  display: inline-block;
+  box-shadow: 5px 10px 8px #888888;
+  background-image: radial-gradient(50% 50%, #FFFFFF 50%, #F3E3B0 100%);
+  border-radius: 32px;
+  border-radius: 32px;
+  height: 50vh;
+  width: 20vw;
+}
+
+.imagecontainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  top: 1vh;
+  height: 25vh;
+  width: 20vw;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 32px;
+}
+
+
+.placename {}
+
+.textname {
+  /* word-wrap: break-word; */
+  text-overflow: ellipsis;
+  position: relative;
+  left: 1em;
+  text-align: left;
+  font-size: 12px;
+}
+
+.price {}
+
+
+.textprice {
+  word-wrap: break-word;
+  position: relative;
+  left: 1em;
+  text-align: left;
+  font-size: 12px;
+}
+
+.placedescription {word-wrap: break-word;}
+
+.textdescription {
+	text-overflow: ellipsis;
+  /* word-wrap: break-word; */#FFFFFFFF
+  position: relative;
+  left: 1em;
+  font-size: 12px;
+  text-align: left;
+}
