@@ -3,6 +3,8 @@ class SpacesController < ApplicationController
   end
 
   def show
+    @spaces = Space.all
+    p Space.all
     render 'index'
   end
 end
