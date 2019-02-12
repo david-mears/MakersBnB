@@ -9,13 +9,11 @@
 
   <%= form_with scope: :user, local: true, url: 'welcome/index' do |form| %>
   <p>
-    <%= form.label :username %><br>
-    <%= form.text_field :username %>
+    <%= form.text_field :attr, placeholder: "Username" %>
   </p>
 
   <p>
-    <%= form.label :password %><br>
-    <%= form.text_area :password %>
+    <%= form.text_area :attr, placeholder: "Password" %>
   </p>
 
   <p>
