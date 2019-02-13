@@ -11,12 +11,8 @@
     <%= "#{space.name}" %><br />
     <%= "#{space.description}" %><br />
     <%= "£#{space.price} per night" %><br />
-    <%= "#{@users.find(space.user_id).forename}" %><br />
-    <p> Availability </p><br />
-    <%= "#{@availabilities.find(space.id).date}" %>
     <br />
     <br />
-
     <% end %>
   </body>
 </html>

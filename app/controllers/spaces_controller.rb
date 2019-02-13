@@ -9,8 +9,6 @@ class SpacesController < ApplicationController
 
   def show
     @spaces = Space.all
-    @users = User.all
-    @availabilities = Availability.all
     render 'index'
   end
 
