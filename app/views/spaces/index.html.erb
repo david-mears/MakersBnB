@@ -13,8 +13,8 @@
       <div class="top2"><h1 class="heading">MakersBnB</h1> </div>
       <div class="top3"><a class="navnext" href="NEXTPAGE"><img src="arr_forward.png"></a></div>
 
-      <% @spaces.each do |space| %>
-      <div id="card1" class="cardbg">
+      <% @spaces.each.with_index do |space, index| %>
+      <div id="card<%= index + 1%>" class="cardbg">
         <div class="imagecontainer"><img src="https://source.unsplash.com/collection/416011/300x300" ></div>
           <div class="placename">
             <p class="textname"><%= "#{space.name}" %></p>
