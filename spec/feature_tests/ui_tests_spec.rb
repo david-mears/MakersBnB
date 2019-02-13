@@ -6,24 +6,24 @@ RSpec.describe 'feature tests' do
     expect(page.status_code).to be(200)
   end
 
-  # scenario 'user can sign up with correct information' do
-  #   visit('/')
-  #   fill_in "email", with: "test.email@gmail.com"
-  #   fill_in "forename", with: "Test"
-  #   fill_in "surname", with: "Email"
-  #   fill_in "username", with: "temail"
-  #   fill_in "password", with: "password"
-  #   fill_in "password_confirmation", with: "password"
-  #   click_on "Log in"
-  #   # Add confirmation here
-  #   # Add confirmation of login here  
-  # end
+  scenario 'user can sign up with correct information' do
+    visit('/')
+    fill_in "email", with: "test.email@gmail.com"
+    fill_in "forename", with: "Test"
+    fill_in "surname", with: "Email"
+    fill_in "username", with: "temail"
+    fill_in "password", with: "password"
+    fill_in "password_confirmation", with: "password"
+    click_button "Log in"
+    # Add confirmation here
+    # Add confirmation of login here
+  end
 
   scenario 'user can login' do
     visit('/login')
     fill_in "session_username", with: "sgreen"
     fill_in "session_password", with: "password123"
-    click_on "Log in"
+    click_button "Log in"
     expect(page).to have_content "Look at all the places!"
     expect(page.status_code).to be(200)
   end
@@ -32,7 +32,7 @@ RSpec.describe 'feature tests' do
     visit('/login')
     fill_in "session_username", with: "sgreen"
     fill_in "session_password", with: "password123"
-    click_on "Log in"
+    click_button "Log in"
     visit('/spaces/new')
     fill_in "name", with: "Test name"
     fill_in "description", with: "Test description"
