@@ -4,6 +4,10 @@
 
 # MakersBnB
 
+MVP in production at https://makersbnb6ever.herokuapp.com (master branch)
+
+Staging branch at https://makersbnb5ever.herokuapp.com
+
 Week 6 project: our first solo team project.
 
 We would like a web application that allows users to list spaces they have available, and to hire spaces for the night.
@@ -76,4 +80,3 @@ As a host
 So that other guests can view my property in case a booking falls through
 I want my spaces to continue to be shown until a booking request is confirmed
 ```
-
