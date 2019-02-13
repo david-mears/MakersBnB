@@ -13,7 +13,29 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+require 'capybara/rspec'
+require 'simplecov'
+require 'simplecov-console'
+require 'rake'
+
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../config/environment', __dir__)
+require 'rspec/rails'
+require 'capybara/rails'
+rake = Rake.application
+rake.init
+rake.load_rakefile
+rake['db:test:prepare'].invoke
+rake['db:seed'].invoke
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+])
+SimpleCov.start
+
 RSpec.configure do |config|
+  config.include Capybara::DSL
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

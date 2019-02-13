@@ -1,0 +1,24 @@
+<% provide(:title, "Sign up") %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with model: @user, url: {action: "create"}, local: true do |f| %>
+
+      <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+
+      <%= f.email_field :forename, class: 'form-control', placeholder: 'First name'  %>
+
+      <%= f.email_field :surname, class: 'form-control', placeholder: 'Last name' %>
+
+      <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>
+
+      <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+
+      <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

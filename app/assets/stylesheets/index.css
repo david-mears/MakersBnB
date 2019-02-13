@@ -1,0 +1,66 @@
+body {
+  background-color: #D8D8D8;
+  font-family: Futura-Bold;
+  color: #636363;
+}
+
+.main-page-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 2fr 10fr 2fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+ }
+
+.grid-container {
+   display: grid;
+   grid-template-columns: 1fr 4fr 1fr;
+   grid-template-rows: 3fr 2fr 2fr 5fr;
+   grid-column-gap: 2%;
+   grid-row-gap: 2%;
+   justify-items: stretch;
+   align-items: stretch;
+}
+
+#form {
+  text-align: center;
+}
+
+#item-5 {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+#item-8 {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+#item-11 {
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+#makersbnb {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-size: 35px;
+  text-align: center;
+}
+
+div#central-box {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+  border-radius: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+}
+
+.fields {
+  background-image: radial-gradient(50% 50%, #FFFFFF 50%, #f3e3b0 100%);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.50);
+  border-radius: 8px;
+  font-size: 25px;
+  text-align: center;
+}
