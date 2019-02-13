@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resources :spaces, :users
 
-  root 'sessions#new'
+  root 'welcome#index'
 end
