@@ -14,13 +14,14 @@ RSpec.describe 'feature tests' do
     fill_in "username", with: "temail"
     fill_in "password", with: "password"
     fill_in "password_confirmation", with: "password"
-    click_button "Log in"
-    # Add confirmation here
-    # Add confirmation of login here
+    click_button "Sign up"
+    expect(page).to have_content "Look at all the places!"
+    expect(page.status_code).to be(200)
   end
 
   scenario 'user can login' do
-    visit('/login')
+    visit('/')
+    click_on "Log in"
     fill_in "session_username", with: "sgreen"
     fill_in "session_password", with: "password123"
     click_button "Log in"
@@ -33,7 +34,7 @@ RSpec.describe 'feature tests' do
     fill_in "session_username", with: "sgreen"
     fill_in "session_password", with: "password123"
     click_button "Log in"
-    visit('/spaces/new')
+    click_on "Add your space"
     fill_in "name", with: "Test name"
     fill_in "description", with: "Test description"
     fill_in "price", with: "12345"
@@ -44,6 +45,12 @@ RSpec.describe 'feature tests' do
     expect(page.status_code).to be(200)
   end
 
+  scenario 'user can view spaces' do
+    visit('/')
+    click_on "View spaces"
+    expect(page).to have_content "Look at all the places!"
+    expect(page.status_code).to be(200)
+  end
 
   # Further tests needed
   # --------------------
