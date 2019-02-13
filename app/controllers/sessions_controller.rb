@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
       params[:session][:password])
       redirect_to '/spaces/index'
     else
-      render 'new'
       flash[:error] = 'Incorrect Username or Password'
+      render 'new'
     end
   end
 
