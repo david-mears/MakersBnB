@@ -11,4 +11,5 @@ class SpacesController < ApplicationController
     @spaces = Space.all
     render 'index'
   end
+
 end
