@@ -1,21 +1,9 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/simon/Projects/MakersBnB/spec/feature_tests/ui_tests_spec.rb": [
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/spec/feature_tests/ui_tests_spec.rb": [
         1,
         null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -29,18 +17,30 @@
         null,
         null,
         null,
-        null
-      ],
-      "/Users/simon/Projects/MakersBnB/spec/unit_tests/date_range_spec.rb": [
-        1,
         null,
-        1,
-        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
       ],
-      "/Users/simon/Projects/MakersBnB/app/models/date_range.rb": [
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/spec/unit_tests/date_range_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/app/models/date_range.rb": [
         1,
         null,
         1,
@@ -61,7 +61,7 @@
         null,
         null
       ],
-      "/Users/simon/Projects/MakersBnB/spec/unit_tests/password_spec.rb": [
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/spec/unit_tests/password_spec.rb": [
         1,
         null,
         1,
@@ -78,7 +78,7 @@
         null,
         null
       ],
-      "/Users/simon/Projects/MakersBnB/app/models/password.rb": [
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/app/models/password.rb": [
         1,
         null,
         1,
@@ -90,20 +90,24 @@
         null,
         null
       ],
-      "/Users/simon/Projects/MakersBnB/app/controllers/users_controller.rb": [
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/app/controllers/users_controller.rb": [
         1,
         1,
         null,
         null,
         1,
+        0,
+        null,
+        null,
+        0,
         null,
         null
       ],
-      "/Users/simon/Projects/MakersBnB/app/controllers/application_controller.rb": [
+      "/Users/_Aodhan_/Projects/week-6/MakersBnB/app/controllers/application_controller.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1550069385
+    "timestamp": 1550073590
   }
 }
