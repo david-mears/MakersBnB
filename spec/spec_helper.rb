@@ -14,15 +14,13 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'rake'
 
-
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
 require 'capybara/rails'
 rake = Rake.application
