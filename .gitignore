@@ -24,6 +24,8 @@
 .byebug_history
 
 **/.DS_Store
-/coverage/**/*
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/coverage.data
+/coverage/
