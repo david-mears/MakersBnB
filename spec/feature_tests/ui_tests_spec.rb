@@ -49,5 +49,6 @@ RSpec.describe 'feature tests' do
   # --------------------
 
   # Sign up with bad data - 3 tests - not an email address, duplicate username, duplicate email, non matching password
+
   # Sign in - 2 more tests - incorrect user, correct user/incorrect pass
 end
