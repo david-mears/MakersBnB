@@ -14,9 +14,9 @@ RSpec.describe 'feature tests' do
     fill_in "username", with: "temail"
     fill_in "password", with: "password"
     fill_in "password_confirmation", with: "password"
-    click_on "Log in"
+    click_button "Log in"
     # Add confirmation here
-    # Add confirmation of login here  
+    # Add confirmation of login here
   end
 
   # Further tests needed
