@@ -23,7 +23,7 @@ RSpec.describe 'feature tests' do
     visit('/login')
     fill_in "session_username", with: "sgreen"
     fill_in "session_password", with: "password123"
-    click_on "Log in"
+    click_button "Log in"
     expect(page).to have_content "Look at all the places!"
     expect(page.status_code).to be(200)
   end
@@ -32,7 +32,7 @@ RSpec.describe 'feature tests' do
     visit('/login')
     fill_in "session_username", with: "sgreen"
     fill_in "session_password", with: "password123"
-    click_on "Log in"
+    click_button "Log in"
     visit('/spaces/new')
     fill_in "name", with: "Test name"
     fill_in "description", with: "Test description"
@@ -52,4 +52,3 @@ RSpec.describe 'feature tests' do
 
   # Sign in - 2 more tests - incorrect user, correct user/incorrect pass
 end
-
