@@ -22,10 +22,14 @@ body {
 
 .top1,
 .top2,
-.top3,
-.top4 {
+.top3, {
 	justify-content:  center;
   text-align: center;
+}
+
+.top2 {
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
 
 
