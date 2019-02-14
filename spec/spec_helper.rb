@@ -18,6 +18,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'rake'
+require 'web_helpers'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
