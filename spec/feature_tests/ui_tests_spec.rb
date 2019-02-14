@@ -20,20 +20,13 @@ RSpec.describe 'feature tests' do
   end
 
   scenario 'user can login' do
-    visit('/')
-    click_on "Log in"
-    fill_in "session_username", with: "sgreen"
-    fill_in "session_password", with: "password123"
-    click_button "Log in"
+    perform_valid_login
     expect(page).to have_content "Look at all the places!"
     expect(page.status_code).to be(200)
   end
 
   scenario 'user can post a new property' do
-    visit('/login')
-    fill_in "session_username", with: "sgreen"
-    fill_in "session_password", with: "password123"
-    click_button "Log in"
+    perform_valid_login
     click_on "Add your space"
     fill_in "name", with: "Test name"
     fill_in "description", with: "Test description"
