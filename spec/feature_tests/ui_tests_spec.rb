@@ -45,6 +45,30 @@ RSpec.describe 'feature tests' do
     expect(page.status_code).to be(200)
   end
 
+  scenario 'user can post multiple properties' do
+    visit('/login')
+    fill_in "session_username", with: "sgreen"
+    fill_in "session_password", with: "password123"
+    click_button "Log in"
+    click_on "Add your space"
+    fill_in "name", with: "Test name"
+    fill_in "description", with: "Test description"
+    fill_in "price", with: "12345"
+    click_on "Submit"
+    click_on "Add your space"
+    fill_in "name", with: "Test 2 name"
+    fill_in "description", with: "Test 2 description"
+    fill_in "price", with: "3456"
+    click_on "Submit"
+    expect(page).to have_content "Test name"
+    expect(page).to have_content "Test description"
+    expect(page).to have_content "12345"
+    expect(page).to have_content "Test 2 name"
+    expect(page).to have_content "Test 2 description"
+    expect(page).to have_content "3456"
+    expect(page.status_code).to be(200)
+  end
+
   scenario 'user can view spaces' do
     visit('/')
     click_on "View spaces"
