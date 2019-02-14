@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Spaces</title>
+    <link rel="stylesheet" type="text/css" href="showlisting.css">
+    <link rel="stylesheet" href="../../assets/stylesheets/spaces.css">
+  </head>
+  <body>
+    <%= render 'shared/menu' %>
+    <h1>Look at all the places!</h1>
+    <div class="container">
+      <div class="top1"><a class="navback" href="LASTPAGE"><img src="arr_backward.png"></a></div>
+      <div class="top2"><h1 class="heading">MakersBnB</h1> </div>
+      <div class="top3"><a class="navnext" href="NEXTPAGE"><img src="arr_forward.png"></a></div>
+
+      <% @spaces.each.with_index do |space, index| %>
+      <div id="card<%= index + 1%>" class="cardbg">
+        <div class="imagecontainer"><img src="https://source.unsplash.com/collection/416011/300x300" ></div>
+          <div class="placename">
+            <p class="textname"><%= "#{space.name}" %></p>
+          </div>
+          <div class="price">
+            <p class="textprice"><%= "£#{space.price} per night" %></p>
+          </div>
+          <div class="placedescription">
+            <p class="textdescription"><%= "#{space.description}" %></p>
+          </div>
+      </div>
+      <% end %>
+
+  </body>
+</html>
