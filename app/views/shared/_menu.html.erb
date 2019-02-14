@@ -5,7 +5,7 @@
   'Sign up' => '/users/new',
   'Log in' => '/login',
   'Add your space' => '/spaces/new',
-  'View spaces' => '/spaces/show'}
+  'View spaces' => '/spaces'}
   links.each do |key, value|
   unless request.fullpath == value %>
     <a href="<%=value%>"><%=key%></a> |

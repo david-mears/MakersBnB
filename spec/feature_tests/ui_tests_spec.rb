@@ -75,6 +75,15 @@ RSpec.describe 'feature tests' do
     expect(page).to have_content "Look at all the places!"
     expect(page.status_code).to be(200)
   end
+  # 
+  # scenario 'user can click on chosen space and see further info' do
+  #   visit('/')
+  #   click_on "View spaces"
+  #   find("#cardimg1").click
+  #   current_path.should == "/spaces/:1"
+  #   expect(page).to have_content "Dirty Hovel"
+  #   expect(page.status_code).to be(200)
+  # end
 
   scenario 'user is not greeted in menu when logged out' do
     visit('/')
