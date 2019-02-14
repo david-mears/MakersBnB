@@ -16,9 +16,9 @@
 
       <% @spaces.each.with_index do |space, index| %>
       <div id="card<%= index + 1%>" class="cardbg">
-        <div class="imagecontainer"><img src="https://source.unsplash.com/collection/416011/300x300" ></div>
+        <div class="imagecontainer"><%= link_to image_tag("https://source.unsplash.com/collection/416011/300x300"), space_path(space.id) %></div>
           <div class="placename">
-            <p class="textname"><%= "#{space.name}" %></p>
+            <p class="textname"><%= link_to "#{space.name}", space_path(space.id) %></p>
           </div>
           <div class="price">
             <p class="textprice"><%= "£#{space.price} per night" %></p>
