@@ -9,6 +9,6 @@ class UsersController < ApplicationController
                 username: params[:username],
                 password: params[:password])
     session[:user_id] = User.return_user_id(params[:username])
-    redirect_to '/spaces/index'
+    redirect_to :controller => 'spaces', :action => 'index' 
   end
 end
