@@ -123,6 +123,22 @@
         null,
         null
       ],
+      "/Users/simon/Projects/MakersBnB/spec/unit_tests/user_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/simon/Projects/MakersBnB/app/controllers/users_controller.rb": [
         1,
         1,
@@ -130,6 +146,8 @@
         null,
         1,
         1,
+        null,
+        null,
         null,
         null,
         1,
@@ -179,6 +197,6 @@
         null
       ]
     },
-    "timestamp": 1550086839
+    "timestamp": 1550138862
   }
 }
