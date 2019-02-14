@@ -9,7 +9,9 @@ class SpacesController < ApplicationController
 
 
   def show
-    @space = Space.find_by(id: params[:id])
+    @space_with_dates = Space.left_outer_joins(:availability)
+                             .where(spaces: { id: params[:id] })
+                             .select('spaces.*', 'availabilities.date')
     render '1'
   end
 
