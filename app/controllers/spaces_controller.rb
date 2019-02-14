@@ -13,7 +13,7 @@ class SpacesController < ApplicationController
                              .where(spaces: { id: params[:id] })
                              .select('spaces.*', 'availabilities.date')
                              .pluck(:date)
-    @space = Space.find_by(id: params[:id])
+    @dates = Space.find_by(id: params[:id])
     render '1'
   end
 
