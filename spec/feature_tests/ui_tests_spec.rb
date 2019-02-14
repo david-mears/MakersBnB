@@ -61,6 +61,27 @@ RSpec.describe 'feature tests' do
   #   expect(page.status_code).to be(200)
   # end
 
+  scenario 'user is not greeted in menu when logged out' do
+    visit('/')
+    expect(page).not_to have_content "Hi,"
+  end
+
+  scenario 'user is greeted in menu when logged in' do
+    perform_valid_login
+    expect(page).to have_content "Hi, Simon!"
+  end
+
+  # scenario 'dates go into database, and come out, when adding a new space' do
+  #   perform_valid_login
+  #   visit('/spaces/new')
+  #   fill_in 'name', with: 'Octagon House'
+  #   fill_in 'description', with: 'octagonal'
+  #   fill_in 'price', with: '3'
+  #   fill_in 'start_date', with: '04042019'
+  #   fill_in 'end_date', with: '10042019'
+  #   click_on 'submit'
+  # end
+
   # Further tests needed
   # --------------------
 
