@@ -20,13 +20,20 @@ RSpec.describe 'feature tests' do
   end
 
   scenario 'user can login' do
-    perform_valid_login
+    visit('/')
+    click_on "Log in"
+    fill_in "session_username", with: "sgreen"
+    fill_in "session_password", with: "password123"
+    click_button "Log in"
     expect(page).to have_content "Look at all the places!"
     expect(page.status_code).to be(200)
   end
 
   scenario 'user can post a new property' do
-    perform_valid_login
+    visit('/login')
+    fill_in "session_username", with: "sgreen"
+    fill_in "session_password", with: "password123"
+    click_button "Log in"
     click_on "Add your space"
     fill_in "name", with: "Test name"
     fill_in "description", with: "Test description"
@@ -43,6 +50,16 @@ RSpec.describe 'feature tests' do
     click_on "View spaces"
     expect(page).to have_content "Look at all the places!"
     expect(page.status_code).to be(200)
+  end
+
+  scenario 'user is not greeted in menu when logged out' do
+    visit('/')
+    expect(page).not_to have_content "Hi,"
+  end
+
+  scenario 'user is greeted in menu when logged in' do
+    perform_valid_login
+    expect(page).to have_content "Hi, Simon!"
   end
 
   # Further tests needed
