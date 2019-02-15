@@ -8,14 +8,47 @@ RSpec.describe 'feature tests' do
 
   scenario 'user can sign up with correct information' do
     visit('/')
+    perform_signup
+    click_button "Sign up"
+    expect(page).to have_content "MakersBnB"
+    expect(page.status_code).to be(200)
+  end
+
+  scenario 'user can login' do
+    perform_valid_login
+    expect(page).to have_content "MakersBnB"
+    expect(page.status_code).to be(200)
+  end
+
+  scenario 'user gets an error when a duplicate email signup' do
+    visit('/')
+    perform_signup
+    click_button "Sign up"
+    click_on "Log out"
     fill_in "email", with: "test.email@gmail.com"
+    fill_in "forename", with: "Test"
+    fill_in "surname", with: "Email"
+    fill_in "username", with: "temail2"
+    fill_in "password", with: "password"
+    fill_in "password_confirmation", with: "password"
+    click_button "Sign up"
+    expect(page).to have_content "Email has already been taken"
+    expect(page.status_code).to be(200)
+  end
+
+  scenario 'user gets an error when a duplicate username signup' do
+    visit('/')
+    perform_signup
+    click_button "Sign up"
+    click_on "Log out"
+    fill_in "email", with: "test.email2@gmail.com"
     fill_in "forename", with: "Test"
     fill_in "surname", with: "Email"
     fill_in "username", with: "temail"
     fill_in "password", with: "password"
     fill_in "password_confirmation", with: "password"
     click_button "Sign up"
-    expect(page).to have_content "MakersBnB"
+    expect(page).to have_content "Username has already been taken"
     expect(page.status_code).to be(200)
   end
 
