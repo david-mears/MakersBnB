@@ -19,7 +19,6 @@ Link to intro: https://github.com/makersacademy/course/blob/master/makersbnb/REA
 - Ruby on Rails: Core web application framework
 - Postgresql: Database
 - RSpec with Capybara: Testing
-- BCrypt: Password hashing
 - Travis: Continuous Integration
 - Github: Source control
 - Heroku: Hosting of staging and production environments
