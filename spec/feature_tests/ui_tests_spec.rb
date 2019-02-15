@@ -79,6 +79,12 @@ RSpec.describe 'feature tests' do
     expect(page).to have_content "Hi, Simon!"
   end
 
+  scenario 'user can login and then logout' do
+    perform_valid_login
+    click_on 'Log out'
+    expect(page).not_to have_content "Hi, Simon!"
+  end
+
   # scenario 'dates go into database, and come out, when adding a new space' do
   #   perform_valid_login
   # click_on "Add your space"
