@@ -8,7 +8,6 @@ class UsersController < ApplicationController
                 surname: params[:surname],
                 username: params[:username],
                 password: params[:password])
-    p newuser.errors.any?
     if newuser.errors.any?
       flash[:error] = newuser.errors.full_messages.first
       redirect_to ('/users/new') and return
