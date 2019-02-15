@@ -1,26 +1,45 @@
-<%= render 'shared/menu' %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/users.css">
+  </head>
+  <body>
 
-<% provide(:title, "Sign up") %>
-<h1>Sign up</h1>
+    <%= render 'shared/menu' %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with model: @user, url: {action: "create"}, local: true do |f| %>
+    <% provide(:title, "Sign up") %>
 
-      <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+    <div class="container">
 
-      <%= f.text_field :forename, class: 'form-control', placeholder: 'First name'  %>
+    <div class="top1"></div>
+    <div class="top2"><h1 class="heading">Sign up</h1> </div>
+    <div class="top3"></div>
 
-      <%= f.text_field :surname, class: 'form-control', placeholder: 'Last name' %>
+      <div class="top1"></div>
+      <div class="top2">
 
-      <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>
+        <%= form_with model: @user, url: {action: "create"}, local: true do |f| %>
 
-      <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+        <p><%= f.email_field :email, class: 'form-control', placeholder: 'Email' %></p>
 
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password' %>
+        <p><%= f.text_field :forename, class: 'form-control', placeholder: 'First name'  %></p>
+        
+        <p><%= f.text_field :surname, class: 'form-control', placeholder: 'Last name' %></p>
 
-      <%= f.submit "Sign up", class: "btn btn-primary" %>
+        <p><%= f.text_field :username, class: 'form-control', placeholder: 'Username' %></p>
+
+        <p><%= f.password_field :password, class: 'form-control', placeholder: 'Password' %></p>
+
+        <p><%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password' %></p>
+
+        <%= f.submit "Sign up", class: "btn btn-primary" %>
     <% end %>
-
+    <br>
+    <%= flash[:error] %>
   </div>
 </div>
+
+
+

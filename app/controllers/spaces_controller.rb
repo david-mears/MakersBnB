@@ -3,7 +3,11 @@ class SpacesController < ApplicationController
   end
 
   def create
-    Space.create(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
+    Space.create(
+      name: params[:name],
+      description: params[:description],
+      price: params[:price],
+      user_id: session[:user_id])
     redirect_to :action => 'index'
   end
 
@@ -13,7 +17,7 @@ class SpacesController < ApplicationController
                              .select('spaces.*', 'availabilities.date')
                              .pluck(:date)
     @space = Space.find_by(id: params[:id])
-    render '1'
+    render 'show'
   end
 
   def index

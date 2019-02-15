@@ -1,13 +1,14 @@
+require 'bcrypt'
+
 class SessionsController < ApplicationController
   def new
   end
 
   def create
-
-    if Password.check_password(params[:session][:username], 
+    if Password.check_password(params[:session][:username],
       params[:session][:password])
       session[:user_id] = User.return_user_id(params[:session][:username])
-      redirect_to :controller => 'spaces', :action => 'index' 
+      redirect_to :controller => 'spaces', :action => 'index'
     else
       flash[:error] = 'Incorrect Username or Password'
       render 'new'
@@ -16,5 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
+    redirect_to :controller => 'users', :action => 'create' 
   end
 end
