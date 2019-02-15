@@ -64,7 +64,7 @@ RSpec.describe 'feature tests' do
     visit('/')
     click_on "View spaces"
     click_on "Dirty Hovel"
-    current_path.should == "/spaces/1"
+    expect(current_path).to eq "/spaces/1"
     expect(page).to have_content "Dirty Hovel"
     expect(page.status_code).to be(200)
   end
