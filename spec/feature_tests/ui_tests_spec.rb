@@ -8,12 +8,7 @@ RSpec.describe 'feature tests' do
 
   scenario 'user can sign up with correct information' do
     visit('/')
-    fill_in "email", with: "test.email@gmail.com"
-    fill_in "forename", with: "Test"
-    fill_in "surname", with: "Email"
-    fill_in "username", with: "temail"
-    fill_in "password", with: "password"
-    fill_in "password_confirmation", with: "password"
+    perform_signup
     click_button "Sign up"
     expect(page).to have_content "Look at all the places!"
     expect(page.status_code).to be(200)
@@ -27,12 +22,7 @@ RSpec.describe 'feature tests' do
 
   scenario 'user gets an error when a duplicate email signup' do
     visit('/')
-    fill_in "email", with: "test.email@gmail.com"
-    fill_in "forename", with: "Test"
-    fill_in "surname", with: "Email"
-    fill_in "username", with: "temail"
-    fill_in "password", with: "password"
-    fill_in "password_confirmation", with: "password"
+    perform_signup
     click_button "Sign up"
     click_on "Log out"
     fill_in "email", with: "test.email@gmail.com"
@@ -48,12 +38,7 @@ RSpec.describe 'feature tests' do
 
   scenario 'user gets an error when a duplicate username signup' do
     visit('/')
-    fill_in "email", with: "test.email@gmail.com"
-    fill_in "forename", with: "Test"
-    fill_in "surname", with: "Email"
-    fill_in "username", with: "temail"
-    fill_in "password", with: "password"
-    fill_in "password_confirmation", with: "password"
+    perform_signup
     click_button "Sign up"
     click_on "Log out"
     fill_in "email", with: "test.email2@gmail.com"
