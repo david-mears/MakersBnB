@@ -19,6 +19,7 @@ Link to intro: https://github.com/makersacademy/course/blob/master/makersbnb/REA
 - Ruby on Rails: Core web application framework
 - Postgresql: Database
 - RSpec with Capybara: Testing
+- BCrypt: Password hashing
 - Travis: Continuous Integration
 - Github: Source control
 - Heroku: Hosting of staging and production environments
@@ -43,8 +44,7 @@ We purposelly designed the application in a RESTful manner with spaces, users, a
 
 For the design of the database schema we created the following diagram:
 
-Inline-style:
-![alt text](https://github.com/david-mears/MakersBnB/tree/staging/public/makersbnbdb.png "Database design")
+![Database design](https://github.com/david-mears/MakersBnB/blob/staging/public/makersbnbdb.png?raw=true "Database design")
 
 ## Pipeline
 
