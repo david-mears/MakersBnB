@@ -8,28 +8,26 @@
   </head>
   <body>
     <%= render 'shared/menu' %>
-    <h1>Look at all the places!</h1>
-    <div class="container">
-      <div class="top1"><a class="navback" href="LASTPAGE"><img src="arr_backward.png"></a></div>
-      <div class="top2"><h1 class="heading">MakersBnB</h1> </div>
-      <div class="top3"><a class="navnext" href="NEXTPAGE"><img src="arr_forward.png"></a></div>
 
-      <% @spaces.each.with_index do |space, index| %>
-      <div id="card<%= index + 1%>" class="cardbg">
-        <div class="imagecontainer">
-<img src="https://source.unsplash.com/collection/416011/300x300" id=#cardimg1">
-    </div>
-          <div class="placename">
-            <p class="textname"><%= "#{space.name}" %></p>
+    <div class="cardbg">
+      <div class="imagecontainer"><img src="https://source.unsplash.com/collection/416011/300x300" ></div>
+        <div class="placename">
+          <p class="textname"><%= "#{@space[:name]}" %></p>
+        </div>
+        <div class="price">
+          <p class="textprice"><%= "£#{@space[:price]} per night" %></p>
+        </div>
+        <div class="placedescription">
+          <p class="textdescription"><%= "#{@space[:description]}" %></p>
+          <p class="textdescription">Dates available:</p>
+              <%= form_with model: @availability, url: {action: "create"}, local: true do |f| %>
+              <% @dates.each do |date| %>
+                <p class="textdescription"><%= f.radio_button :availability, date %>
+                  <%= date.strftime("%A, %e %B %Y") %></p>
+              <% end %>
+              <p class="buttondescription"><%= f.submit "Book", class: "btn btn-primary" %></p>
+            <% end %>
           </div>
-          <div class="price">
-            <p class="textprice"><%= "£#{space.price} per night" %></p>
-          </div>
-          <div class="placedescription">
-            <p class="textdescription"><%= "#{space.description}" %></p>
-          </div>
-      </div>
-      <% end %>
-
-  </body>
+        </div>
+</body>
 </html>
