@@ -13,7 +13,7 @@ class SpacesController < ApplicationController
                              .select('spaces.*', 'availabilities.date')
                              .pluck(:date)
     @space = Space.find_by(id: params[:id])
-    render '1'
+    render 'show'
   end
 
   def index
