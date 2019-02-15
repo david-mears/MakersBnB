@@ -22,6 +22,7 @@ Link to intro: https://github.com/makersacademy/course/blob/master/makersbnb/REA
 - Travis: Continuous Integration
 - Github: Source control
 - Heroku: Hosting of staging and production environments
+- BCrypt: Password hashing and security
 
 ## Local install
 
@@ -42,7 +43,7 @@ We purposelly designed the application in a RESTful manner with spaces, users, a
 
 For the design of the database schema we created the following diagram:
 
-Inline-style: 
+Inline-style:
 ![alt text](https://github.com/david-mears/MakersBnB/tree/staging/public/makersbnbdb.png "Database design")
 
 ## Pipeline
@@ -53,7 +54,7 @@ Github was configured with a master and staging branch and all day-to-day change
 
 At regular intervals, typically when a user story was completed, the staging branch was merged into master.
 
-After each merged pull request the staging branch automatically deployed to Heroku at https://makersbnb5ever.herokuapp.com to allow the developer to perform any further manual UI checks. The master branch would automatically deploy to a production Heroku site at https://makersbnb6ever.herokuapp.com when staging changes were merged. 
+After each merged pull request the staging branch automatically deployed to Heroku at https://makersbnb5ever.herokuapp.com to allow the developer to perform any further manual UI checks. The master branch would automatically deploy to a production Heroku site at https://makersbnb6ever.herokuapp.com when staging changes were merged.
 
 ## User Stories (from headline specifications)
 
