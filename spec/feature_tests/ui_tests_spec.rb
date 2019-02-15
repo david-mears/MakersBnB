@@ -15,13 +15,14 @@ RSpec.describe 'feature tests' do
     fill_in "password", with: "password"
     fill_in "password_confirmation", with: "password"
     click_button "Sign up"
-    expect(page).to have_content "Look at all the places!"
+    expect(page).to have_content "MakersBnB"
     expect(page.status_code).to be(200)
   end
 
   scenario 'user can login' do
+    visit('/')
     perform_valid_login
-    expect(page).to have_content "Look at all the places!"
+    expect(page).to have_content "MakersBnB"
     expect(page.status_code).to be(200)
   end
 
@@ -56,7 +57,7 @@ RSpec.describe 'feature tests' do
   scenario 'user can view spaces' do
     visit('/')
     click_on "View spaces"
-    expect(page).to have_content "Look at all the places!"
+    expect(page).to have_content "MakersBnB"
     expect(page.status_code).to be(200)
   end
 
