@@ -16,4 +16,8 @@ class UsersController < ApplicationController
     session[:user_id] = User.return_user_id(params[:username])
     redirect_to :controller => 'spaces', :action => 'index'
   end
+
+  def index
+    redirect_to :controller => 'users', :action => 'new' 
+  end
 end
