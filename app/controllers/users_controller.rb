@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    hash_password = BCrypt::Password.create(params[:password])
+    hash_password = Password.create(params[:password])
 
     User.create(email: params[:email],
                 forename: params[:forename],
@@ -18,6 +18,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    redirect_to :controller => 'users', :action => 'new' 
+    redirect_to :controller => 'users', :action => 'new'
   end
 end
