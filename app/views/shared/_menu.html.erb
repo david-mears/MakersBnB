@@ -11,6 +11,7 @@
     <a href="<%=value%>"><%=key%></a> |
   <% end %>
 <% end %>
+<%= link_to "Log out", logout_path, :method => :delete %>
   <% if !!session[:user_id] %>
   Hi, <%= User.return_user_info(session[:user_id])[:forename] %>!
   <% end %>
