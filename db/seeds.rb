@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(forename: "Simon", surname: "Green", username: "sgreen", password: "password123", email: "simon.green@gmail.com")
-User.create(forename: "Brooke", surname: "Woolley", username: "bwoolley", password: "password456", email: "b.w@gmail.com")
-User.create(forename: "David", surname: "Mears", username: "dmears", password: "password876", email: "d.mears@gmail.com")
+User.create(forename: "Simon", surname: "Green", username: "sgreen", password: BCrypt::Password.create("password123"), email: "simon.green@gmail.com")
+User.create(forename: "Brooke", surname: "Woolley", username: "bwoolley", password: BCrypt::Password.create("password456"), email: "b.w@gmail.com")
+User.create(forename: "David", surname: "Mears", username: "dmears", password: BCrypt::Password.create("password876"), email: "d.mears@gmail.com")
 Space.create(name: "Dirty Hovel", description: "A charming rat infested hovel with space for 2", price: "24.99", user_id: "1")
 Space.create(name: "Castle", description: "A big castle withg fireplace and moat", price: "85.99", user_id: "1")
 Space.create(name: "Bijou pit", description: "Small pit with a lot of potential", price: "15.99", user_id: "2")
