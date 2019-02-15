@@ -10,13 +10,13 @@ RSpec.describe 'feature tests' do
     visit('/')
     perform_signup
     click_button "Sign up"
-    expect(page).to have_content "Look at all the places!"
+    expect(page).to have_content "MakersBnB"
     expect(page.status_code).to be(200)
   end
 
   scenario 'user can login' do
     perform_valid_login
-    expect(page).to have_content "Look at all the places!"
+    expect(page).to have_content "MakersBnB"
     expect(page.status_code).to be(200)
   end
 
@@ -52,6 +52,13 @@ RSpec.describe 'feature tests' do
     expect(page.status_code).to be(200)
   end
 
+  scenario 'user can login' do
+    visit('/')
+    perform_valid_login
+    expect(page).to have_content "MakersBnB"
+    expect(page.status_code).to be(200)
+  end
+
   scenario 'user can post a new property' do
     perform_valid_login
     click_on "Add your space"
@@ -83,7 +90,7 @@ RSpec.describe 'feature tests' do
   scenario 'user can view spaces' do
     visit('/')
     click_on "View spaces"
-    expect(page).to have_content "Look at all the places!"
+    expect(page).to have_content "MakersBnB"
     expect(page.status_code).to be(200)
   end
 
