@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   validates_presence_of :forename, :surname, :username, :password, :email
+  validates_uniqueness_of :username, :email
   has_many :availability
   has_many :space
 

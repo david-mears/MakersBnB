@@ -25,6 +25,48 @@ RSpec.describe 'feature tests' do
     expect(page.status_code).to be(200)
   end
 
+  scenario 'user gets an error when a duplicate email signup' do
+    visit('/')
+    fill_in "email", with: "test.email@gmail.com"
+    fill_in "forename", with: "Test"
+    fill_in "surname", with: "Email"
+    fill_in "username", with: "temail"
+    fill_in "password", with: "password"
+    fill_in "password_confirmation", with: "password"
+    click_button "Sign up"
+    click_on "Log out"
+    fill_in "email", with: "test.email@gmail.com"
+    fill_in "forename", with: "Test"
+    fill_in "surname", with: "Email"
+    fill_in "username", with: "temail2"
+    fill_in "password", with: "password"
+    fill_in "password_confirmation", with: "password"
+    click_button "Sign up"
+    expect(page).to have_content "Email has already been taken"
+    expect(page.status_code).to be(200)
+  end
+
+  scenario 'user gets an error when a duplicate username signup' do
+    visit('/')
+    fill_in "email", with: "test.email@gmail.com"
+    fill_in "forename", with: "Test"
+    fill_in "surname", with: "Email"
+    fill_in "username", with: "temail"
+    fill_in "password", with: "password"
+    fill_in "password_confirmation", with: "password"
+    click_button "Sign up"
+    click_on "Log out"
+    fill_in "email", with: "test.email2@gmail.com"
+    fill_in "forename", with: "Test"
+    fill_in "surname", with: "Email"
+    fill_in "username", with: "temail"
+    fill_in "password", with: "password"
+    fill_in "password_confirmation", with: "password"
+    click_button "Sign up"
+    expect(page).to have_content "Username has already been taken"
+    expect(page.status_code).to be(200)
+  end
+
   scenario 'user can post a new property' do
     perform_valid_login
     click_on "Add your space"
