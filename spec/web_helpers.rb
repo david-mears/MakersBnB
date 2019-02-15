@@ -14,3 +14,12 @@ def add_space
   fill_in 'end_date', with: '10042019'
   click_on 'Submit'
 end
+
+def perform_signup
+  fill_in "email", with: "test.email@gmail.com"
+  fill_in "forename", with: "Test"
+  fill_in "surname", with: "Email"
+  fill_in "username", with: "temail"
+  fill_in "password", with: "password"
+  fill_in "password_confirmation", with: "password"
+end
