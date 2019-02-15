@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :surname, presence: true
   validates :username, presence: true
   validates :password, presence: true
+  validates_confirmation_of :password
   validates :email, presence: true
 
   has_many :availability
