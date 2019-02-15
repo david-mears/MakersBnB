@@ -1,11 +1,6 @@
 class User < ActiveRecord::Base
-  validates :forename, presence: true
-  validates :surname, presence: true
-  validates :username, presence: true
-  validates :password, presence: true
-  validates_confirmation_of :password
-  validates :email, presence: true
-
+  validates_presence_of :forename, :surname, :username, :password, :email
+  validates_uniqueness_of :username, :email
   has_many :availability
   has_many :space
 

@@ -19,11 +19,10 @@ Link to intro: https://github.com/makersacademy/course/blob/master/makersbnb/REA
 - Ruby on Rails: Core web application framework
 - Postgresql: Database
 - RSpec with Capybara: Testing
-- BCrypt: Password hashing
+- BCrypt: Password hashing and security
 - Travis: Continuous Integration
 - Github: Source control
 - Heroku: Hosting of staging and production environments
-- BCrypt: Password hashing and security
 
 ## Local install
 
@@ -40,7 +39,7 @@ Then simply connect to localhost:3000 to begin using the application.
 
 ## Design
 
-We purposelly designed the application in a RESTful manner with spaces, users, availabilities and sessions following this model.
+We purposefully designed the application in a RESTful manner with spaces, users, availabilities and sessions following this model.
 
 For the design of the database schema we created the following diagram:
 
