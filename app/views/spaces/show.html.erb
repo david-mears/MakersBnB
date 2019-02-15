@@ -27,7 +27,9 @@
               <%= form_with model: @availability, url: {action: "create"}, local: true do |f| %>
               <% @dates.each do |date| %>
                 <p class="textdescription"><%= f.radio_button :availability, date %>
+                  <% unless @date.nil? %>
                   <%= date.strftime("%A, %e %B %Y") %></p>
+                  <% end %>
               <% end %>
               <p class="buttondescription"><%= f.submit "Book", class: "btn btn-primary" %></p>
             <% end %>
