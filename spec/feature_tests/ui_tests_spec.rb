@@ -14,13 +14,14 @@ RSpec.describe 'feature tests' do
     fill_in "username", with: "temail"
     fill_in "password", with: "password"
     fill_in "password_confirmation", with: "password"
-    click_button "Log in"
-    # Add confirmation here
-    # Add confirmation of login here
+    click_button "Sign up"
+    expect(page).to have_content "Look at all the places!"
+    expect(page.status_code).to be(200)
   end
 
   scenario 'user can login' do
-    visit('/login')
+    visit('/')
+    click_on "Log in"
     fill_in "session_username", with: "sgreen"
     fill_in "session_password", with: "password123"
     click_button "Log in"
@@ -33,7 +34,7 @@ RSpec.describe 'feature tests' do
     fill_in "session_username", with: "sgreen"
     fill_in "session_password", with: "password123"
     click_button "Log in"
-    visit('/spaces/new')
+    click_on "Add your space"
     fill_in "name", with: "Test name"
     fill_in "description", with: "Test description"
     fill_in "price", with: "12345"
@@ -44,6 +45,66 @@ RSpec.describe 'feature tests' do
     expect(page.status_code).to be(200)
   end
 
+  scenario 'user can post multiple properties' do
+    visit('/login')
+    fill_in "session_username", with: "sgreen"
+    fill_in "session_password", with: "password123"
+    click_button "Log in"
+    click_on "Add your space"
+    fill_in "name", with: "Test name"
+    fill_in "description", with: "Test description"
+    fill_in "price", with: "12345"
+    click_on "Submit"
+    click_on "Add your space"
+    fill_in "name", with: "Test 2 name"
+    fill_in "description", with: "Test 2 description"
+    fill_in "price", with: "3456"
+    click_on "Submit"
+    expect(page).to have_content "Test name"
+    expect(page).to have_content "Test description"
+    expect(page).to have_content "12345"
+    expect(page).to have_content "Test 2 name"
+    expect(page).to have_content "Test 2 description"
+    expect(page).to have_content "3456"
+    expect(page.status_code).to be(200)
+  end
+
+  scenario 'user can view spaces' do
+    visit('/')
+    click_on "View spaces"
+    expect(page).to have_content "Look at all the places!"
+    expect(page.status_code).to be(200)
+  end
+
+  scenario 'user can click on chosen space and see further info' do
+    visit('/')
+    click_on "View spaces"
+    click_on "Dirty Hovel"
+    current_path.should == "/spaces/1"
+    expect(page).to have_content "Dirty Hovel"
+    expect(page.status_code).to be(200)
+  end
+
+  scenario 'user is not greeted in menu when logged out' do
+    visit('/')
+    expect(page).not_to have_content "Hi,"
+  end
+
+  scenario 'user is greeted in menu when logged in' do
+    perform_valid_login
+    expect(page).to have_content "Hi, Simon!"
+  end
+
+  # scenario 'dates go into database, and come out, when adding a new space' do
+  #   perform_valid_login
+  #   visit('/spaces/new')
+  #   fill_in 'name', with: 'Octagon House'
+  #   fill_in 'description', with: 'octagonal'
+  #   fill_in 'price', with: '3'
+  #   fill_in 'start_date', with: '04042019'
+  #   fill_in 'end_date', with: '10042019'
+  #   click_on 'submit'
+  # end
 
   # Further tests needed
   # --------------------

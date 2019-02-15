@@ -1,9 +1,18 @@
 <div style="text-align: right; padding-right: 3rem">
 
   <nav>
-  <a href="/users/new">Sign up</a> |
-  <a href="/login">Log in</a> |
-  <a href="/spaces/new">Add your space</a> |
-  <a href="/spaces/show">View spaces</a>
+  <% links = {
+  'Sign up' => '/users/new',
+  'Log in' => '/login',
+  'Add your space' => '/spaces/new',
+  'View spaces' => '/spaces'}
+  links.each do |key, value|
+  unless request.fullpath == value %>
+    <a href="<%=value%>"><%=key%></a> |
+  <% end %>
+<% end %>
+  <% if !!session[:user_id] %>
+  Hi, <%= User.return_user_info(session[:user_id])[:forename] %>!
+  <% end %>
   </nav>
   </div>

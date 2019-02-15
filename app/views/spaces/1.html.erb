@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Spaces</title>
+    <link rel="stylesheet" type="text/css" href="showlisting.css">
+    <link rel="stylesheet" href="../../assets/stylesheets/spaces.css">
+  </head>
+  <body>
+    <%= render 'shared/menu' %>
+
+    <div class="cardbg">
+      <div class="imagecontainer"><img src="https://source.unsplash.com/collection/416011/300x300" ></div>
+        <div class="placename">
+          <p class="textname"><%= "#{@space[:name]}" %></p>
+        </div>
+        <div class="price">
+          <p class="textprice"><%= "£#{@space[:price]} per night" %></p>
+        </div>
+        <div class="placedescription">
+          <p class="textdescription"><%= "#{@space[:description]}" %></p>
+
+    </div>
+</div>
+</body>
+</html>

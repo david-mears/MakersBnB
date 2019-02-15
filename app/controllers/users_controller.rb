@@ -3,10 +3,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(email: params[:email], forename: params[:forename],
-    surname: params[:surname], username: params[:username],
-    password: params[:password])
-    session[:user_id] = User.find_by(username: params[:username]).id
-    redirect_to '/spaces/show'
+    User.create(email: params[:email],
+                forename: params[:forename],
+                surname: params[:surname],
+                username: params[:username],
+                password: params[:password])
+    session[:user_id] = User.return_user_id(params[:username])
+    redirect_to :controller => 'spaces', :action => 'index' 
   end
 end
