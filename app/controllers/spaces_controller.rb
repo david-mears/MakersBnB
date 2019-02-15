@@ -3,7 +3,11 @@ class SpacesController < ApplicationController
   end
 
   def create
-    Space.create(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
+    Space.create(
+      name: params[:name],
+      description: params[:description],
+      price: params[:price],
+      user_id: session[:user_id])
     redirect_to :action => 'index'
   end
 
